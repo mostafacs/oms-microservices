@@ -1,0 +1,26 @@
+{
+  "name": "@oms/toolkit",
+  "version": "1.0.0",
+  "description": "Minimal shared toolkit - generic utilities only",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "pino": "^9.0.0",
+    "pino-pretty": "^11.0.0",
+    "pg": "^8.12.0",
+    "pg-format": "^1.0.4",
+    "amqplib": "^0.10.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/pg": "^8.11.6",
+    "@types/pg-format": "^1.0.5",
+    "@types/amqplib": "^0.10.5",
+    "typescript": "^5.4.5"
+  }
+}

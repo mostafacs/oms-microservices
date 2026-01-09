@@ -1,0 +1,53 @@
+{
+  "name": "oms-node",
+  "version": "1.0.0",
+  "description": "Order Management System - Microservices Architecture",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "typecheck": "turbo run typecheck",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "docker:logs": "docker-compose logs -f",
+    "docker:ps": "docker-compose ps",
+    "docker:restart": "docker-compose restart",
+    "docker:clean": "docker-compose down -v",
+    "docker:up:all": "docker-compose up --build",
+    "migrate:orders": "cd services/orders-service && npm run migrate",
+    "migrate:products": "cd services/products-service && npm run migrate",
+    "migrate:users": "cd services/users-service && npm run migrate",
+    "migrate:payments": "cd services/payments-service && npm run migrate",
+    "migrate:all": "npm run migrate:users && npm run migrate:products && npm run migrate:orders && npm run migrate:payments",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "prettier": "^3.2.5",
+    "turbo": "^1.13.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "keywords": [
+    "order-management",
+    "microservices",
+    "fastify",
+    "postgresql",
+    "rabbitmq",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT"
+}
